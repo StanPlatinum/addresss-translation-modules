@@ -1,3 +1,6 @@
+#ifndef _V2P_H_
+#define _V2P_H_
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -44,3 +47,5 @@ uint64_t v2p(void *v) {
 
     return pfn * PAGE_SIZE + page_offset;
 }
+
+#endif
