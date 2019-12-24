@@ -1,8 +1,4 @@
-#ifndef _V2P_H_
-#define _V2P_H_
-
-#include "memory.h"
-#include "fcntl.h"
+#include "v2p.h"
 
 int fd_pagemap = -1;
 
@@ -22,5 +18,3 @@ uint64_t v2p(void *v) {
     pfn = pfn_item & PFN_MASK;              // 取低55位为物理页号
     return pfn * PAGE_SIZE + page_offset;
 }
-
-#endif

@@ -1,8 +1,14 @@
+#ifndef _V2P_H_
+#define _V2P_H_
+
 #include "stdint.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
 #include "errno.h"
+
+#include "memory.h"
+#include "fcntl.h"
 
 //---------------------------------
 // page select
@@ -28,3 +34,5 @@ extern int fd_pagemap;
 uint64_t v2p(void *v);
 
 //---------------------------------
+
+#endif

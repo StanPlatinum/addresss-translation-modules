@@ -2,9 +2,10 @@
 
 #include "v2p.h"
 
+#include <sys/mman.h>
+
 using namespace std;
 
-#define ALLOC_SIZE 4096
 #define ALLOC_FLAG (MAP_PRIVATE | MAP_ANONYMOUS)
 
 int main()
