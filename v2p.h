@@ -15,8 +15,6 @@
 #define PFN_PRESENT_FLAG (1ul << 63)
 
 #define page_map_file  "/proc/self/pagemap"
-#define page_flag_file "/proc/kpageflags"
-#define mem_file "/dev/md_device"
 #define PAGE_SIZE 0x1000ul      
 
 #define ASSERT(line) if (!(line)) { fprintf(stderr, "ASSERT error at line %d: " #line, __LINE__); perror(" "); return -1; }
