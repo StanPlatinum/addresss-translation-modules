@@ -7,11 +7,32 @@
 int main()
 {
 	int n = 1;
-	char *v;
+	//char *v;
 	printf("test begins\n");
-        ASSERT((v = (char *)mmap(0, ALLOC_SIZE * n, PROT_READ | PROT_WRITE, ALLOC_FLAG, -1, 0)) != MAP_FAILED);
+        
+	//ASSERT((v = (char *)mmap(0, ALLOC_SIZE * n, PROT_READ | PROT_WRITE, ALLOC_FLAG, -1, 0)) != MAP_FAILED);
 	//Weijie: must add the following line
-	memset(v, '9', ALLOC_SIZE * n);
+	//memset(v1, '9', ALLOC_SIZE * n);
+	
+   	// Allocate some memory to manipulate
+	size_t buf_size = ALLOC_SIZE * n + 1;
+	void *v = malloc(buf_size);
+   	if(v == NULL) 
+	{
+      		printf("Failed to allocate memory for buffer\n");
+      		exit(1);
+   	}
+
+   	// Lock the page in memory
+   	if(mlock(v, buf_size) == -1) 
+	{
+      		printf("Failed to lock page in memory");
+      		exit(1);
+   	}
+	
+   	// Add some data to the memory
+	memset(v, 'a', buf_size);
+	
 	printf("v addr: %p\n", v);
 
 	uint64_t p = v2p(v);
