@@ -1,0 +1,1 @@
+cmd_/root/docker-encompassed/read_physical/dram.ko := ld -EL -r  -maarch64linux -T ./scripts/module-common.lds -T ./arch/arm64/kernel/module.lds --build-id  -o /root/docker-encompassed/read_physical/dram.ko /root/docker-encompassed/read_physical/dram.o /root/docker-encompassed/read_physical/dram.mod.o ;  true

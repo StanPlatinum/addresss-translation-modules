@@ -11,10 +11,20 @@ uint64_t v2p(void *v) {
     uint64_t page_offset = (uint64_t)v % PAGE_SIZE;       // 页内偏移
     uint64_t pfn_item_offset = vir_page_idx*sizeof(uint64_t);   // pagemap文件中对应虚拟页号的偏移
 
+    //lizhi-2019-12-28: test
+    printf("vir_page_idx is 0x%lx\n",vir_page_idx);
+    printf("page_offset is 0x%lx\n",page_offset);
+    printf("pfn_item_offset is 0x%lx\n",pfn_item_offset);
+
     // 读取pfn
     uint64_t pfn_item, pfn;
     ASSERT( lseek(fd_pagemap, pfn_item_offset, SEEK_SET) != -1 );
     ASSERT( read(fd_pagemap, &pfn_item, sizeof(uint64_t)) == sizeof(uint64_t) );
     pfn = pfn_item & PFN_MASK;              // 取低55位为物理页号
+
+    //lizhi-2019-12-28: test
+   printf("pfn_item is 0x%lx\n",pfn_item);
+    printf("pfn is 0x%lx\n",pfn);
+
     return pfn * PAGE_SIZE + page_offset;
 }
