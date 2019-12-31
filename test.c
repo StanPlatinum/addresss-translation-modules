@@ -37,4 +37,6 @@ int main()
 
 	uint64_t p = v2p(v);
 	printf("p addr: %p\n", p);
+
+	free(v);
 }
