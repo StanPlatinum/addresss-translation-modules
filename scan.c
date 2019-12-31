@@ -13,7 +13,7 @@ int main()
 	int i;
 	for (i=1;i<=end; i++) {
 		//Alloc memory by "malloc"
-		//char *v = (char*)malloc(buf_size);
+		char *v = (char*)malloc(buf_size);
 		
 		//Alloc memory by "stack point"
         	//char p[100000]; char v=p;
