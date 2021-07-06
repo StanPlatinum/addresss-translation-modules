@@ -1,3 +1,5 @@
-# docker-encompassed
+# Useful addresss translation modules
 
-To see if a docker container could steal other non-living once-colocated container's data...
+# ~~docker-encompassed~~
+
+~~To see if a docker container could steal other non-living once-colocated container's data...~~
